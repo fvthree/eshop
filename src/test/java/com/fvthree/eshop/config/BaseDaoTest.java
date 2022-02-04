@@ -12,7 +12,7 @@ import java.time.OffsetDateTime;
         classes = EshopApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-public abstract class BaseSpringTest {
+public abstract class BaseDaoTest {
 
     @Autowired
     public UserRepository userRepository;

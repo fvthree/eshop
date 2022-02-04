@@ -1,11 +1,11 @@
 package com.fvthree.eshop.user;
 
-import com.fvthree.eshop.config.BaseSpringTest;
+import com.fvthree.eshop.config.BaseDaoTest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class UserRepositoryTest extends BaseSpringTest {
+public class UserRepositoryTest extends BaseDaoTest {
 
     @Test
     public void testAbleToFindByUsername() {
