@@ -3,11 +3,15 @@ INSERT INTO category (
     name,
     color,
     icon,
-    image
+    image,
+    date_created,
+    last_updated
 ) VALUES (
     1000,
     'Hats',
     'White',
     'icon.png',
-    'image.png'
+    'image.png',
+    '2022-02-06 04:30:00',
+    '2022-02-06 04:30:00'
 );

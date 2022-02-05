@@ -1,42 +1,66 @@
-package com.fvthree.eshop.category;
+package com.fvthree.eshop.product;
 
-import lombok.AllArgsConstructor;
+import com.fvthree.eshop.category.Category;
 import lombok.Builder;
 import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
-@Entity
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category {
+@Entity
+@Builder
+public class Product {
 
     @Id
     @Column(nullable = false, updatable = false)
     @SequenceGenerator(
-            name = "category_sequence",
-            sequenceName = "category_sequence",
+            name = "product_sequence",
+            sequenceName = "product_sequence",
             allocationSize = 1,
             initialValue = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "category_sequence"
+            generator = "product_sequence"
     )
     private Long id;
 
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
-    private String color;
+    private String description;
+
     @Column(nullable = false)
-    private String icon;
+    private String richDescription;
+
     @Column(nullable = false)
-    private String  image;
+    private String image;
+
+    @Column(nullable = false)
+    private String brand;
+
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @Column(nullable = false)
+    private Integer countInStock;
+
+    @Column(nullable = false)
+    private Double rating;
+
+    @Column(nullable = false)
+    private boolean isFeatured;
 
     @Column(nullable = false, updatable = false)
     private OffsetDateTime dateCreated;
