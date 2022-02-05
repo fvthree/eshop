@@ -46,10 +46,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(final Long id, final UserDTO userDTO) {
-        final User user = userRepository.findById(id)
+        final User conv = userRepository.findById(id)
+                .map(user -> userMapper.updateUser(userDTO, user))
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        userMapper.updateUser(userDTO, user);
-        userRepository.save(user);
+        userRepository.save(conv);
     }
 
     @Override

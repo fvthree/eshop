@@ -1,5 +1,8 @@
 package com.fvthree.eshop.config;
 
+import com.fvthree.eshop.category.Category;
+import com.fvthree.eshop.category.CategoryDTO;
+import com.fvthree.eshop.category.CategoryRepository;
 import com.fvthree.eshop.user.User;
 import com.fvthree.eshop.user.UserDTO;
 import com.fvthree.eshop.user.UserRepository;
@@ -13,6 +16,9 @@ public abstract class BaseServiceTest {
 
     @MockBean
     public UserRepository userRepository;
+
+    @MockBean
+    public CategoryRepository categoryRepository;
 
     protected User createUser() {
         return User.builder()
@@ -30,5 +36,19 @@ public abstract class BaseServiceTest {
 
     protected UserDTO createUserDTO() {
         return new UserDTO(1L, "updated", "update", "update@mail.com","12345");
+    }
+
+    protected Category createCategory(){
+        return Category.builder()
+                .id(1L)
+                .name("Tops")
+                .color("Black")
+                .image("/images/images.png")
+                .icon("/images/tops.png")
+                .build();
+    }
+
+    protected CategoryDTO createCategoryDTO() {
+        return new CategoryDTO(1L, "Bottoms","Black","images/icon.png","images/images.png");
     }
 }
