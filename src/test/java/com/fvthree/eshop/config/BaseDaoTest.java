@@ -1,6 +1,7 @@
 package com.fvthree.eshop.config;
 
 import com.fvthree.eshop.EshopApplication;
+import com.fvthree.eshop.category.Category;
 import com.fvthree.eshop.user.User;
 import com.fvthree.eshop.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,17 +32,13 @@ public abstract class BaseDaoTest {
                 .build();
     }
 
-    protected User createSecondUser() {
-        return User.builder()
-                .id(2L)
-                .name("Luke SkyWalker")
-                .username("luke.skywalker")
-                .email("lukeskywalker@gmail.com")
-                .password("123456")
-                .isActive(true)
-                .isNotLocked(true)
-                .dateCreated(OffsetDateTime.now())
-                .lastUpdated(OffsetDateTime.now())
+    protected Category createCategory(){
+        return Category.builder()
+                .id(1L)
+                .name("Tops")
+                .color("Black")
+                .image("/images/images.png")
+                .icon("/images/tops.png")
                 .build();
     }
 }
