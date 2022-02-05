@@ -11,7 +11,7 @@ public class UserControllerTest extends BaseIntegrationTest {
     @BeforeEach
     public void createUser_success() {
 
-        final HttpEntity<String> request = new HttpEntity<>(readResource("/requests/createAccountDTORequest.json"), jsonHeader());
+        final HttpEntity<String> request = new HttpEntity<>(readResource("/requests/createUserDTORequest.json"), jsonHeader());
         final ResponseEntity<User> response = restTemplate.exchange("/api/users", HttpMethod.POST, request, User.class);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());

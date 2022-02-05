@@ -20,7 +20,7 @@ import java.nio.charset.Charset;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @ActiveProfiles("it")
-@Sql({"/data/clearAll.sql","/data/userData.sql"})
+@Sql({"/data/clearAll.sql","/data/userData.sql","/data/categoryData.sql"})
 @SqlMergeMode(SqlMergeMode.MergeMode.MERGE)
 public class BaseIntegrationTest {
 

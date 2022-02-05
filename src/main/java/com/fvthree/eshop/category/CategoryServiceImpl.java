@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void update(Long id, final CategoryDTO categoryDTO) {
-        Category cat = categoryRepository.findById(id)
+        final Category cat = categoryRepository.findById(id)
             .map(category -> categoryMapper.updateCategory(categoryDTO, category))
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         categoryRepository.save(cat);
