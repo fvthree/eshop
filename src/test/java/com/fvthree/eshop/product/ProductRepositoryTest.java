@@ -2,7 +2,6 @@ package com.fvthree.eshop.product;
 
 import com.fvthree.eshop.category.Category;
 import com.fvthree.eshop.config.BaseDaoTest;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +11,17 @@ public class ProductRepositoryTest extends BaseDaoTest {
 
     @BeforeEach
     public void initializeCategory() {
-        Category category = createCategory();
-        categoryRepository.save(category);
+        Product product = createProduct();
+        Category category = categoryRepository.save(createCategory());
+        product.setCategory(category);
+        productRepository.save(product);
     }
 
     @Test
     public void testCreateProduct() {
         Product product = createProduct();
+        Category category = categoryRepository.save(createCategory());
+        product.setCategory(category);
         productRepository.save(product);
         assertEquals(1, productRepository.count());
     }

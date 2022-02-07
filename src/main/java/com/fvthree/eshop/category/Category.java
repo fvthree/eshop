@@ -31,10 +31,13 @@ public class Category {
 
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private String color;
+
     @Column(nullable = false)
     private String icon;
+
     @Column(nullable = false)
     private String  image;
 
