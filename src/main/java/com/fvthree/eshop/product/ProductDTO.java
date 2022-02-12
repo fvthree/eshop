@@ -48,6 +48,6 @@ public class ProductDTO {
     private Double rating;
 
     @NotNull
-    private boolean isFeatured;
+    private Boolean isFeatured;
 
 }

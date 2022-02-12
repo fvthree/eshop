@@ -5,6 +5,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/api/categories", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CategoryController {
@@ -21,7 +23,7 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody final CategoryDTO categoryDTO){
+    public ResponseEntity<?> create(@RequestBody @Valid final CategoryDTO categoryDTO){
         return new ResponseEntity<>(categoryService.create(categoryDTO), HttpStatus.CREATED);
     }
 

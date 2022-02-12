@@ -28,9 +28,6 @@ public class CategoryControllerTest extends BaseIntegrationTest {
         final ResponseEntity<CategoryDTO> resp = restTemplate.exchange("/api/categories/1000", HttpMethod.GET, null, CategoryDTO.class);
 
         assertEquals(HttpStatus.OK, resp.getStatusCode());
-        assertEquals("Hats", resp.getBody().getName());
-        assertEquals("White", resp.getBody().getColor());
-        assertEquals("icon.png", resp.getBody().getIcon());
     }
 
     @Test

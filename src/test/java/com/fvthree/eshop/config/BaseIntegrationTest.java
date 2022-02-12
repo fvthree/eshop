@@ -1,10 +1,12 @@
 package com.fvthree.eshop.config;
 
 import com.fvthree.eshop.EshopApplication;
-import com.fvthree.eshop.user.UserRepository;
+import com.fvthree.eshop.category.Category;
+import com.fvthree.eshop.category.CategoryRepository;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,15 +22,15 @@ import java.nio.charset.Charset;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @ActiveProfiles("it")
-@Sql({"/data/clearAll.sql","/data/userData.sql","/data/categoryData.sql"})
+@Sql({"/data/clearAll.sql","/data/insertData.sql"})
 @SqlMergeMode(SqlMergeMode.MergeMode.MERGE)
 public class BaseIntegrationTest {
 
     @Autowired
     public TestRestTemplate restTemplate;
 
-    @Autowired
-    public UserRepository userRepository;
+    @MockBean
+    public CategoryRepository categoryRepository;
 
     @SneakyThrows
     public String readResource(final String resourceName) {
@@ -39,5 +41,15 @@ public class BaseIntegrationTest {
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
+    }
+
+    protected Category createCategory(){
+        return Category.builder()
+                .id(1000L)
+                .name("Tops")
+                .color("Black")
+                .image("/images/images.png")
+                .icon("/images/tops.png")
+                .build();
     }
 }

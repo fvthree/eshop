@@ -60,7 +60,7 @@ public class Product {
     private Double rating;
 
     @Column(nullable = false)
-    private boolean isFeatured;
+    private Boolean isFeatured;
 
     @Column(nullable = false, updatable = false)
     private OffsetDateTime dateCreated;

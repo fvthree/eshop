@@ -1,6 +1,8 @@
 package com.fvthree.eshop.product;
 
 import com.fvthree.eshop.category.CategoryRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,6 +12,8 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService {
+
+    private static final Logger log = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     private final ProductRepository productRepository;
 

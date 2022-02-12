@@ -1,0 +1,12 @@
+{
+  "name": "accessories",
+  "description": "white",
+  "richDescription": "white accesory",
+  "image": "accessory.png",
+  "brand": "Silverswan",
+  "price": 100.00,
+  "category": 2000,
+  "countInStock": 10,
+  "rating": 5.0,
+  "isFeatured": false
+}
