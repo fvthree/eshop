@@ -2,5 +2,12 @@
 	"name":"user",
 	"email":"user@mail.com",
 	"username":"username",
-	"password":"123456"
+	"password":"123456",
+	"street": "Victoria",
+	"apartment": "Jinga",
+	"zip": "4100",
+	"city": "Manila",
+	"country": "PH",
+	"phone": "+631231234",
+	"isAdmin": false
 }

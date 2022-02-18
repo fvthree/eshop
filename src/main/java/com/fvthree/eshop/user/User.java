@@ -29,17 +29,44 @@ public class User {
             generator = "user_sequence"
     )
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false, unique = true)
     private String username;
+
     @Column(nullable = false, unique = true)
     private String email;
+
     @JsonIgnore
     @Column(nullable = false)
     private String password;
+
     @Column(nullable = false)
     private boolean isActive;
+
+    @Column(nullable = false)
+    private String street;
+
+    @Column(nullable = false)
+    private String apartment;
+
+    @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
+    private String zip;
+
+    @Column(nullable = false)
+    private String country;
+
+    @Column(nullable = false)
+    private String phone;
+
+    @Column(nullable = false)
+    private Boolean isAdmin;
+
     @Column(nullable = false)
     private boolean isNotLocked;
 

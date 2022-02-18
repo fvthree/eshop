@@ -25,6 +25,8 @@ public class UserControllerTest extends BaseIntegrationTest {
         assertEquals("script", resp.getBody().getName());
         assertEquals("script", resp.getBody().getUsername());
         assertEquals("script@mail.com", resp.getBody().getEmail());
+        assertEquals("Manila", resp.getBody().getCity());
+        assertEquals("PH", resp.getBody().getCountry());
     }
 
     @Test

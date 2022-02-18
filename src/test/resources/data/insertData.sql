@@ -7,7 +7,14 @@ INSERT INTO user (
     date_created,
     last_updated,
     is_active,
-    is_not_locked
+    is_not_locked,
+    street,
+    apartment,
+    city,
+    zip,
+    country,
+    phone,
+    is_admin
 ) VALUES (
     1200,
     'script',
@@ -17,7 +24,14 @@ INSERT INTO user (
     '2022-02-05 04:30:00',
     '2022-02-05 04:30:00',
     1,
-    1
+    1,
+    'Highstreet',
+    'Jinga',
+    'Manila',
+    '4223',
+    'PH',
+    '+631231234',
+    true
 );
 
 INSERT INTO category (

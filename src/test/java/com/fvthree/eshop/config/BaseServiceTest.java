@@ -34,6 +34,13 @@ public abstract class BaseServiceTest {
                 .username("MockUsername")
                 .email("mock@mail.com")
                 .password("123456")
+                .apartment("B304")
+                .zip("4213")
+                .city("Manila")
+                .country("PH")
+                .street("Victoria")
+                .phone("+6312312345")
+                .isAdmin(false)
                 .isActive(true)
                 .isNotLocked(true)
                 .dateCreated(OffsetDateTime.now())
@@ -42,7 +49,7 @@ public abstract class BaseServiceTest {
     }
 
     protected UserDTO createUserDTO() {
-        return new UserDTO(1L, "updated", "update", "update@mail.com","12345");
+        return new UserDTO(1L, "updated", "update", "update@mail.com","12345","Victoria","Jinga","Manila","4231","PH","+633211233211", false);
     }
 
     protected Category createCategory(){

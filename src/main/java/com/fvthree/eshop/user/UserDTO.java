@@ -32,4 +32,31 @@ public class UserDTO {
     @Size(max = 255)
     private String password;
 
+    @NotNull
+    @Size(max = 255)
+    private String street;
+
+    @NotNull
+    @Size(max = 255)
+    private String apartment;
+
+    @NotNull
+    @Size(max = 255)
+    private String city;
+
+    @NotNull
+    @Size(max = 255)
+    private String zip;
+
+    @NotNull
+    @Size(max = 255)
+    private String country;
+
+    @NotNull
+    @Size(max = 255)
+    private String phone;
+
+    @NotNull
+    private Boolean isAdmin;
+
 }
