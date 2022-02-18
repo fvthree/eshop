@@ -71,11 +71,12 @@ public abstract class BaseServiceTest {
                 .category(createCategory())
                 .countInStock(10)
                 .rating(5.0)
+                .numReviews(22)
                 .isFeatured(true)
                 .build();
     }
 
     protected ProductDTO createProductDTO() {
-        return new ProductDTO(2L, "Hyper dunk", "authentic", "limited edition shoe","nike.png","Nike", new BigDecimal(10.00), 1L, 10, 5.0, true);
+        return new ProductDTO(2L, "Hyper dunk", "authentic", "limited edition shoe","nike.png","Nike", new BigDecimal(10.00), 1L, 10, 5.0,22, true);
     }
 }

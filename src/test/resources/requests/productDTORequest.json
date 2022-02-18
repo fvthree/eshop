@@ -8,6 +8,7 @@
 	"price": 100.00,
 	"category": 2000,
 	"countInStock": 10,
+	"numReviews": 22,
 	"rating": 5.0,
 	"isFeatured": false
 }

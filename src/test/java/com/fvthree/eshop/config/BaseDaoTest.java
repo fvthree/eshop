@@ -64,6 +64,7 @@ public abstract class BaseDaoTest {
                 .category(createCategory())
                 .countInStock(10)
                 .rating(5.0)
+                .numReviews(22)
                 .isFeatured(true)
                 .build();
     }

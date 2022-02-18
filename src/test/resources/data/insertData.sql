@@ -49,6 +49,7 @@ INSERT INTO product (
     category_id,
     count_in_stock,
     rating,
+    num_reviews,
     is_featured,
     date_created,
     last_updated
@@ -63,6 +64,7 @@ INSERT INTO product (
     2000,
     10,
     5.0,
+    22,
     false,
     '2022-02-12 04:30:00',
     '2022-02-12 04:30:00'

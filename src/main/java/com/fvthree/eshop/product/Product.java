@@ -60,6 +60,9 @@ public class Product {
     private Double rating;
 
     @Column(nullable = false)
+    private Integer numReviews;
+
+    @Column(nullable = false)
     private Boolean isFeatured;
 
     @Column(nullable = false, updatable = false)
